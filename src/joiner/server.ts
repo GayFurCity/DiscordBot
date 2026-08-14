@@ -108,6 +108,7 @@ const app = express()
             return res.status(400).render("main", { title: "Error", message });
         }
     })
+    .get("/up", async(_req, res) => res.status(204).end())
     .use(async(_req, res) => res.status(404).render("main", { title: "Not Found" }))
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     .use(async(err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
